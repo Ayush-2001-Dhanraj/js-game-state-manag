@@ -9,6 +9,12 @@ export default class Input {
         case "ArrowRight":
           this.lastKey = "PRESS right";
           break;
+        case "ArrowUp":
+          this.lastKey = "PRESS up";
+          break;
+        case "ArrowDown":
+          this.lastKey = "PRESS down";
+          break;
       }
     });
     window.addEventListener("keyup", (e) => {
@@ -18,6 +24,12 @@ export default class Input {
           break;
         case "ArrowRight":
           this.lastKey = "RELEASE right";
+          break;
+        case "ArrowUp":
+          this.lastKey = "RELEASE up";
+          break;
+        case "ArrowDown":
+          this.lastKey = "RELEASE down";
           break;
       }
     });

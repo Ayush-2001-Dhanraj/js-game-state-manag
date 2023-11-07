@@ -15,13 +15,17 @@ window.addEventListener("load", () => {
   const player = new Player(canvas.width, canvas.height);
   const input = new Input();
 
-  function animate() {
+  let lasTime = 0;
+
+  function animate(timeStamp) {
+    const deltaTime = timeStamp - lasTime;
+    lasTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawCurrentStatus(ctx, input, player);
-    player.update(input);
+    player.update(input, deltaTime);
     player.draw(ctx);
     requestAnimationFrame(animate);
   }
 
-  animate();
+  animate(0);
 });
